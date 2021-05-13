@@ -92,7 +92,7 @@ export class FlightDataComponent implements OnInit {
   airportsGroups: airportsGroup[] = [
     {
       country: 'Polska',
-      url: '/assets/flags/pl.png',
+      url: '../../../assets/flags/pl.png',
       airports: [
         this.airportsArray[0],
         this.airportsArray[1],

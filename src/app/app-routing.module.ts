@@ -7,7 +7,7 @@ import { MainComponent } from './components/main/main.component';
 import { SeatselectionComponent } from './components/seatselection/seatselection.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/homepage', pathMatch: 'full' },
+  { path: '', redirectTo: 'homepage', pathMatch: 'full' },
   { path: 'homepage', component: MainComponent },
   { path: 'seats', component: SeatselectionComponent },
   { path: 'login', component: LoginComponent },
