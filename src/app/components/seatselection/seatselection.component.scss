@@ -1,0 +1,71 @@
+.container-fluid {
+  padding: 20px;
+  background-image: url('../../../assets/backgrounds/seats.jpg');
+  background-position: center;
+  background-size: cover;
+  // background-color: #eee;
+}
+
+.right {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  margin: 0 20px;
+}
+
+.left {
+  width: 425px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 0 20px;
+  padding: 10px;
+}
+
+mat-icon {
+  cursor: pointer;
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  font-weight: 700;
+}
+
+h2 {
+  margin-top: 12px;
+  margin-bottom: 0px;
+}
+
+h3 {
+  text-align: right;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  display: flex;
+}
+
+.seats {
+  display: flex;
+  align-items: center;
+}
+
+span {
+  margin-left: 50px;
+}
+
+@media (max-width: 767px) {
+  .d-flex {
+    flex-wrap: wrap;
+  }
+
+  .left {
+    width: 425px;
+    margin-top: 10px;
+  }
+}

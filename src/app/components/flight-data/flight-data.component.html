@@ -1,0 +1,96 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="d-flex">
+
+      <div>
+        <h2 class="outline">Świat staje przed Tobą otworem!</h2>
+        <h1 class="outline">Wykrzycz: "Hello, World!"</h1>
+      </div>
+
+      <div class="shadow">
+        <form [formGroup]="flighForm">
+
+          <mat-radio-group formControlName="journey">
+            <mat-radio-button *ngFor="let item of journeys" [value]="item.key" [checked]="item.checked"
+              (click)="changeJourneyType()">{{item.key}}
+            </mat-radio-button>
+          </mat-radio-group>
+
+          <div class="verse">
+
+            <div *ngIf="journeys[0].checked==true; then onewayBlock else returnBlock"></div>
+
+            <ng-template #onewayBlock>
+              <mat-form-field appearance="outline" class="date">
+                <mat-label>Wybierz datę wylotu</mat-label>
+                <input matInput formControlName="start" [min]="minDate" [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </ng-template>
+
+            <ng-template #returnBlock>
+              <mat-form-field appearance="outline" class="date">
+                <mat-label>Wybierz daty podróży</mat-label>
+                <mat-date-range-input [min]="minDate" [rangePicker]="picker">
+                  <input matStartDate formControlName="start" placeholder="Data wylotu">
+                  <input matEndDate formControlName="end" placeholder="Data powrotu">
+                </mat-date-range-input>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker></mat-date-range-picker>
+              </mat-form-field>
+            </ng-template>
+
+            <div class="d-inline-flex passengers">
+              <div class="label">Liczba pasażerów:</div>
+              <button class="passengerButton leftButton" (click)="addPassenger()">+</button>
+              <span>{{passengers}}</span>
+              <button class="passengerButton rightButton" (click)="removePassenger()">-</button>
+            </div>
+
+          </div>
+
+          <div class="verse">
+
+            <mat-form-field appearance="outline" class="location">
+              <mat-label>
+                <mat-icon>flight_takeoff</mat-icon>Wylot z:
+              </mat-label>
+              <mat-select formControlName="origin">
+                <mat-optgroup *ngFor="let group of airportsGroups" [disabled]="group.disabled">
+                  <img class="float-start" src={{group.url}}><span>{{group.country|uppercase}}</span>
+                  <mat-option *ngFor="let airports of group.airports" [value]="airports.airportId"
+                    (click)="createDestinationArray()">
+                    {{airports.city}} {{airports.alias}} | {{airports.iatacode}}</mat-option>
+                </mat-optgroup>
+              </mat-select>
+              <mat-error *ngIf="flighForm.get('origin')?.hasError('required')">Wybierz miejsce odlotu
+              </mat-error>
+            </mat-form-field>
+
+            <mat-icon class="arrows" (click)="swapLocation()">compare_arrows</mat-icon>
+
+            <mat-form-field appearance="outline" class="location">
+              <mat-label>
+                <mat-icon>flight_land</mat-icon>Przylot do:
+              </mat-label>
+              <mat-select formControlName="destination">
+                <mat-option *ngFor="let item of destinationsArray" [value]="item.airportId">{{item.city}} {{item.alias}}
+                  | {{item.iatacode}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="flighForm.get('origin')?.hasError('required')">Wybierz miejsce przylotu
+              </mat-error>
+            </mat-form-field>
+
+          </div>
+
+          <button type="button" class="btn btn-success float-end" [disabled]="!flighForm.valid" (click)="submit()">Dalej
+            &#8594;</button>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

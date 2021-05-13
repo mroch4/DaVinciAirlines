@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="container">
+    <div *ngFor="let item of flights">
+      <div class="card shadow">
+        <div class="section">
+          <h1>Numer rezerwacji:</h1>
+          <h2>{{item.nr | uppercase}}</h2>
+        </div>
+        <div class="section">
+          <h1>Odlot:</h1>
+          <h2>{{item.originCity}} {{item.originAlias}} | {{item.originCode}}</h2>
+          <h2>{{item.departureTime}}</h2>
+        </div>
+        <div class="section">
+          <h1>Przylot:</h1>
+          <h2>{{item.destinationCity}} {{item.destinationAlias}} | {{item.destinationCode}}</h2>
+          <h2>{{item.returnTime}}</h2>
+        </div>
+        <div class="section">
+          <h1>Ilość pasażerów:</h1>
+          <h2>{{item.passengers}}</h2>
+        </div>
+        <mat-divider></mat-divider>
+        <div>
+          <img class="logo" src="../../../assets/dva_logo.png" alt="cdv_logo">
+          <h4>DaVinci Airlines</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

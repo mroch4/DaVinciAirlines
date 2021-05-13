@@ -1,0 +1,41 @@
+<div class="container-fluid">
+
+  <div class="container">
+
+    <div class="d-inline-flex flex-column shadow">
+      <form [formGroup]="logInForm">
+
+        <div class="d-flex">
+          <mat-form-field appearance="outline">
+            <mat-label>Login</mat-label>
+            <input type="email" matInput formControlName="login">
+            <mat-error *ngIf="logInForm.get('login')?.hasError('required')">Musisz podać login (adres e-mail).
+            </mat-error>
+            <mat-error *ngIf="logInForm.get('login')?.hasError('email')">Podana fraza nie jest adresem e-mail!
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="d-flex">
+          <mat-form-field appearance="outline">
+            <mat-label>Hasło</mat-label>
+            <input type="password" matInput formControlName="password">
+            <mat-error *ngIf="logInForm.get('password')?.hasError('required')">Musisz podać hasło.
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="d-flex">
+          <button type="button" class="btn btn-success" [disabled]="!logInForm.valid" (click)="submit()">Zaloguj
+            się</button>
+        </div>
+
+      </form>
+
+      <h5>Zapomniałeś hasła?</h5>
+
+    </div>
+
+  </div>
+
+</div>

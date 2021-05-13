@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Przelicznik walut</h2>
+<mat-dialog-content>
+  <div class="row">
+    <div class="col">
+      <h3>{{amount| number: '1.2-2'}} {{baseCurrency}} = </h3>
+      <h1>{{computedValue | number: '1.2-2'}} {{targetCurrency}}</h1>
+    </div>
+    <div class="col">
+      <h4>1 {{baseCurrency}} = {{rate | number: '1.2-2'}} {{targetCurrency}}</h4>
+      <h4>1 {{targetCurrency}} = {{1/rate | number: '1.2-2'}} {{baseCurrency}}</h4>
+    </div>
+  </div>
+  <h5>Kurs NBP Web API numer {{no}}, z dnia {{date}}</h5>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close>Powrót</button>
+</mat-dialog-actions>

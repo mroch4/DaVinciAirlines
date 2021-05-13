@@ -1,0 +1,66 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-center">
+    <div class="right">
+      <div *ngIf="isFlightDomestic===true; then embraer else boeing"></div>
+      <ng-template #embraer>
+        <img src="../../../assets/planes/embraer_erj_170.svg" alt="embraer_seatmap" usemap="#embraerseatmap">
+        <map id="embraerseatmap" name="embraerseatmap">
+          <div *ngFor="let item of eSeats">
+            <div *ngIf="item.booked; then booked else available"></div>
+            <ng-template #booked>
+              <area shape="rect" coords={{item.coords}} id="{{item.col}}{{item.row}}"
+                matTooltip="Wskazane miejsce jest już zajęte">
+            </ng-template>
+            <ng-template #available>
+              <area shape="rect" coords={{item.coords}} id="{{item.col}}{{item.row}}" alt="{{item.index}}"
+                (click)="chooseSeat($event)">
+            </ng-template>
+          </div>
+        </map>
+      </ng-template>
+      <ng-template #boeing>
+        <img src="../../../assets/planes/boeing_737_800.svg" alt="boeing_seatmap" usemap="#boeingseatmap">
+        <map id="boeingseatmap" name="boeingseatmap">
+          <div *ngFor="let item of bSeats">
+            <div *ngIf="item.booked; then booked else available"></div>
+            <ng-template #booked>
+              <area shape="rect" coords={{item.coords}} id="{{item.col}}{{item.row}}"
+                matTooltip="Wskazane miejsce jest już zajęte">
+            </ng-template>
+            <ng-template #available>
+              <area shape="rect" coords={{item.coords}} id="{{item.col}}{{item.row}}" alt="{{item.index}}"
+                (click)="chooseSeat($event)">
+            </ng-template>
+          </div>
+        </map>
+      </ng-template>
+    </div>
+    <div class="left">
+      <h1>Twoja rezerwacja:</h1>
+      <h2>Odlot z lotniska:</h2>
+      <h3>{{originCity}} {{originAlias}} | {{originCode}}</h3>
+      <h2>W dniu:</h2>
+      <h3>{{departureTime|date:'d MMMM y'}} </h3>
+      <h2>Przylot na lotnisko:</h2>
+      <h3>{{destinationCity}} {{destinationAlias}} | {{destinationCode}}</h3>
+      <ng-template [ngIf]="returnTime">
+        <h2>Data powrotu:</h2>
+        <h3>{{returnTime|date:'d MMMM y'}}</h3>
+      </ng-template>
+      <h2>Liczba pasażerów:</h2>
+      <h3>{{passengers}}</h3>
+      <h2>Zarezerwowane miejsca:</h2>
+      <h4>(wybrano {{chosenAmount}}/{{passengers}} miejsc)</h4>
+      <div *ngFor="let item of chosenSeats, index as index">
+        <h3 class="seats">Miejsce dla pasażera nr {{index+1}}:
+          <span>{{item}}</span>
+          <mat-icon (click)="removeSeat(index)">delete</mat-icon>
+        </h3>
+      </div>
+      <div class="buttons">
+        <button type="button" class="btn btn-success float-start" (click)="edit()">&#8592; Powrót do edycji</button>
+        <button type="button" class="btn btn-success float-end" (click)="submit()">Dalej &#8594;</button>
+      </div>
+    </div>
+  </div>
+</div>

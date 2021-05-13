@@ -1,0 +1,45 @@
+.container-fluid {
+  padding: 20px;
+  background-image: url('../../../assets/backgrounds/cards.jpg');
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+}
+
+.container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 320px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.logo {
+  margin-top: 20px;
+  height: 32px;
+}
+
+h1 {
+  font-weight: 400;
+  text-align: left;
+  margin: 0;
+}
+
+h2 {
+  font-weight: 700;
+  text-align: right;
+  margin: 0;
+}
+
+h4 {
+  margin-bottom: 0;
+}

@@ -1,0 +1,160 @@
+.container-fluid {
+  height: 90vh;
+  padding: 20px;
+  background-image: url('../../../assets/backgrounds/flightform.jpg');
+  background-position: center;
+  background-size: cover;
+  // background-color: #eee;
+}
+
+.d-flex {
+  justify-content: space-between;
+}
+
+.shadow {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.outline {
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-style: italic;
+}
+
+.mat-radio-button~.mat-radio-button {
+  margin: 10px 0;
+  display: block;
+}
+
+.date,
+.location {
+  width: 240px;
+}
+
+.date {
+  margin-right: 44px;
+}
+
+.verse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.passengers {
+  width: 240px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  padding-bottom: 18.813px;
+  margin: 3.5px 0;
+}
+
+.label {
+  font-size: 15px;
+  color: rgb(106, 106, 106);
+}
+
+$radius: 5px;
+
+.passengerButton {
+  font-size: 20px;
+  color: rgb(106, 106, 106);
+  height: 54.81px;
+  width: 54.81px;
+  cursor: pointer;
+  border: 1.5px solid rgb(224, 224, 224);
+  background-color: white;
+
+  &:hover {
+    border: 2px solid rgb(33, 33, 33);
+  }
+
+}
+
+.leftButton {
+  border-radius: $radius 0 0 $radius;
+  margin-right: 16px;
+}
+
+.rightButton {
+  border-radius: 0 $radius $radius 0;
+  margin-left: 16px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+img {
+  height: 28px;
+  margin: 7px 8px 7px 0;
+}
+
+span {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+mat-icon {
+  margin: 0 10px;
+}
+
+.arrows {
+  margin: 0 10px 18.14px 10px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.6;
+
+  &:hover {
+    opacity: 1.0;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .d-flex {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .date {
+    margin-right: 0;
+  }
+
+  .verse {
+    flex-direction: column;
+  }
+
+  .arrows {
+    transform: rotate(-90deg);
+  }
+}

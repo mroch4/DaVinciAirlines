@@ -1,0 +1,49 @@
+.container-fluid {
+  margin: 10px 0;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.d-inline-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  display: inline-block;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social_icons {
+  img {
+    width: 25px;
+    margin: 10px;
+  }
+}
+
+.app_icons {
+  img {
+    height: 25px;
+    margin: 10px 5px;
+  }
+}
+
+
+h3 {
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.note {
+  margin: 12px;
+  text-align: left;
+  color: #ddd;
+}

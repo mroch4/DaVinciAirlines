@@ -1,0 +1,36 @@
+.container-fluid {
+  height: 80vh;
+  padding: 40px;
+  background-image: url('../../../assets/backgrounds/login.jpg');
+  background-position: cover;
+  background-size: cover;
+  text-align: right;
+}
+
+.shadow {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.d-flex {
+  justify-content: center;
+}
+
+h5 {
+  margin-top: 32px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+mat-form-field {
+  margin-bottom: 6px;
+}
+
+@media (max-width: 767px) {
+
+  .container-fluid {
+    text-align: center;
+  }
+
+}

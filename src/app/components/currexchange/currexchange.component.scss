@@ -1,0 +1,71 @@
+.container-fluid {
+  padding: 20px;
+  background-image: url('../../../assets/backgrounds/currency.jpg');
+  background-position: center;
+  background-size: cover;
+  // background-color: #ddd;
+  text-align: center;
+}
+
+h2 {
+  color: white;
+  text-transform: uppercase;
+  text-shadow: -5px -5px 20px #000, 5px -5px 20px #000, -5px 5px 20px #000, 5px 5px 20px #000;
+}
+
+.shadow {
+  display: inline-flex;
+  background-color: rgba(255, 255, 255, 0.97);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.verse {
+  display: flex;
+  align-items: center;
+}
+
+mat-form-field {
+  margin-bottom: 6px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+img {
+  height: 28px;
+  margin-right: 10px;
+}
+
+mat-icon {
+  cursor: pointer;
+  opacity: 0.6;
+  margin: 0 10px 18.14px 10px;
+
+  &:hover {
+    opacity: 1.0;
+  }
+}
+
+.btn {
+  width: 200px;
+}
+
+@media (max-width: 540px) {
+  .arrows {
+    transform: rotate(-90deg);
+  }
+
+  .verse {
+    flex-direction: column;
+  }
+}
