@@ -1,0 +1,498 @@
+{
+  "company": "embraer",
+  "model": "ERJ-170",
+  "version": "(E70)",
+  "url": "https://www.seatguru.com/airlines/LOT_Polish_Airlines/LOT_Polish_Airlines_Embraer_ERJ-170.php",
+  "seats": [
+    {
+      "index": 0,
+      "coords": "223,256,256,296",
+      "row": 1,
+      "col": "C",
+      "booked": false
+    },
+    {
+      "index": 1,
+      "coords": "254,256,287,296",
+      "row": 1,
+      "col": "D",
+      "booked": false
+    },
+    {
+      "index": 2,
+      "coords": "134,302,167,341",
+      "row": 2,
+      "col": "A",
+      "booked": true
+    },
+    {
+      "index": 3,
+      "coords": "165,302,198,341",
+      "row": 2,
+      "col": "B",
+      "booked": false
+    },
+    {
+      "index": 4,
+      "coords": "223,302,256,341",
+      "row": 2,
+      "col": "C",
+      "booked": true
+    },
+    {
+      "index": 5,
+      "coords": "254,302,287,341",
+      "row": 2,
+      "col": "D",
+      "booked": false
+    },
+    {
+      "index": 6,
+      "coords": "134,348,167,387",
+      "row": 3,
+      "col": "A",
+      "booked": false
+    },
+    {
+      "index": 7,
+      "coords": "165,348,198,387",
+      "row": 3,
+      "col": "B",
+      "booked": false
+    },
+    {
+      "index": 8,
+      "coords": "223,348,256,387",
+      "row": 3,
+      "col": "C",
+      "booked": false
+    },
+    {
+      "index": 9,
+      "coords": "254,348,287,387",
+      "row": 3,
+      "col": "D",
+      "booked": true
+    },
+    {
+      "index": 10,
+      "coords": "134,394,167,433",
+      "row": 4,
+      "col": "A",
+      "booked": true
+    },
+    {
+      "index": 11,
+      "coords": "165,394,198,433",
+      "row": 4,
+      "col": "B",
+      "booked": false
+    },
+    {
+      "index": 12,
+      "coords": "223,394,256,433",
+      "row": 4,
+      "col": "C",
+      "booked": true
+    },
+    {
+      "index": 13,
+      "coords": "254,394,287,433",
+      "row": 4,
+      "col": "D",
+      "booked": false
+    },
+    {
+      "index": 14,
+      "coords": "134,439,167,479",
+      "row": 5,
+      "col": "A",
+      "booked": false
+    },
+    {
+      "index": 15,
+      "coords": "165,439,198,479",
+      "row": 5,
+      "col": "B",
+      "booked": false
+    },
+    {
+      "index": 16,
+      "coords": "223,439,256,479",
+      "row": 5,
+      "col": "C",
+      "booked": false
+    },
+    {
+      "index": 17,
+      "coords": "254,439,287,479",
+      "row": 5,
+      "col": "D",
+      "booked": false
+    },
+    {
+      "index": 18,
+      "coords": "134,485,167,524",
+      "row": 6,
+      "col": "A",
+      "booked": false
+    },
+    {
+      "index": 19,
+      "coords": "165,485,198,524",
+      "row": 6,
+      "col": "B",
+      "booked": false
+    },
+    {
+      "index": 20,
+      "coords": "223,485,256,524",
+      "row": 6,
+      "col": "C",
+      "booked": false
+    },
+    {
+      "index": 21,
+      "coords": "254,485,287,524",
+      "row": 6,
+      "col": "D",
+      "booked": false
+    },
+    {
+      "index": 22,
+      "coords": "134,531,167,570",
+      "row": 7,
+      "col": "A",
+      "booked": false
+    },
+    {
+      "index": 23,
+      "coords": "165,531,198,570",
+      "row": 7,
+      "col": "B",
+      "booked": true
+    },
+    {
+      "index": 24,
+      "coords": "223,531,256,570",
+      "row": 7,
+      "col": "C",
+      "booked": false
+    },
+    {
+      "index": 25,
+      "coords": "254,531,287,570",
+      "row": 7,
+      "col": "D",
+      "booked": false
+    },
+    {
+      "index": 26,
+      "coords": "134,577,167,616",
+      "row": 8,
+      "col": "A",
+      "booked": true
+    },
+    {
+      "index": 27,
+      "coords": "165,577,198,616",
+      "row": 8,
+      "col": "B",
+      "booked": false
+    },
+    {
+      "index": 28,
+      "coords": "223,577,256,616",
+      "row": 8,
+      "col": "C",
+      "booked": false
+    },
+    {
+      "index": 29,
+      "coords": "254,577,287,616",
+      "row": 8,
+      "col": "D",
+      "booked": true
+    },
+    {
+      "index": 30,
+      "coords": "134,622,167,662",
+      "row": 9,
+      "col": "A",
+      "booked": false
+    },
+    {
+      "index": 31,
+      "coords": "165,622,198,662",
+      "row": 9,
+      "col": "B",
+      "booked": false
+    },
+    {
+      "index": 32,
+      "coords": "223,622,256,662",
+      "row": 9,
+      "col": "C",
+      "booked": false
+    },
+    {
+      "index": 33,
+      "coords": "254,622,287,662",
+      "row": 9,
+      "col": "D",
+      "booked": true
+    },
+    {
+      "index": 34,
+      "coords": "134,668,167,707",
+      "row": 10,
+      "col": "A",
+      "booked": true
+    },
+    {
+      "index": 35,
+      "coords": "165,668,198,707",
+      "row": 10,
+      "col": "B",
+      "booked": true
+    },
+    {
+      "index": 36,
+      "coords": "223,668,256,707",
+      "row": 10,
+      "col": "C",
+      "booked": false
+    },
+    {
+      "index": 37,
+      "coords": "254,668,287,707",
+      "row": 10,
+      "col": "D",
+      "booked": true
+    },
+    {
+      "index": 38,
+      "coords": "134,714,167,753",
+      "row": 11,
+      "col": "A",
+      "booked": false
+    },
+    {
+      "index": 39,
+      "coords": "165,714,198,753",
+      "row": 11,
+      "col": "B",
+      "booked": false
+    },
+    {
+      "index": 40,
+      "coords": "223,714,256,753",
+      "row": 11,
+      "col": "C",
+      "booked": true
+    },
+    {
+      "index": 41,
+      "coords": "254,714,287,753",
+      "row": 11,
+      "col": "D",
+      "booked": false
+    },
+    {
+      "index": 42,
+      "coords": "134,760,167,799",
+      "row": 12,
+      "col": "A",
+      "booked": true
+    },
+    {
+      "index": 43,
+      "coords": "165,760,198,799",
+      "row": 12,
+      "col": "B",
+      "booked": true
+    },
+    {
+      "index": 44,
+      "coords": "223,760,256,799",
+      "row": 12,
+      "col": "C",
+      "booked": true
+    },
+    {
+      "index": 45,
+      "coords": "254,760,287,799",
+      "row": 12,
+      "col": "D",
+      "booked": true
+    },
+    {
+      "index": 46,
+      "coords": "134,805,167,844",
+      "row": 13,
+      "col": "A",
+      "booked": false
+    },
+    {
+      "index": 47,
+      "coords": "165,805,198,844",
+      "row": 13,
+      "col": "B",
+      "booked": false
+    },
+    {
+      "index": 48,
+      "coords": "223,805,256,844",
+      "row": 13,
+      "col": "C",
+      "booked": false
+    },
+    {
+      "index": 49,
+      "coords": "254,805,287,845",
+      "row": 13,
+      "col": "D",
+      "booked": false
+    },
+    {
+      "index": 50,
+      "coords": "134,851,167,890",
+      "row": 14,
+      "col": "A",
+      "booked": false
+    },
+    {
+      "index": 51,
+      "coords": "165,851,198,890",
+      "row": 14,
+      "col": "B",
+      "booked": false
+    },
+    {
+      "index": 52,
+      "coords": "223,851,256,890",
+      "row": 14,
+      "col": "C",
+      "booked": true
+    },
+    {
+      "index": 53,
+      "coords": "254,851,287,890",
+      "row": 14,
+      "col": "D",
+      "booked": false
+    },
+    {
+      "index": 54,
+      "coords": "134,897,167,936",
+      "row": 15,
+      "col": "A",
+      "booked": true
+    },
+    {
+      "index": 55,
+      "coords": "165,897,198,936",
+      "row": 15,
+      "col": "B",
+      "booked": false
+    },
+    {
+      "index": 56,
+      "coords": "223,897,256,936",
+      "row": 15,
+      "col": "C",
+      "booked": false
+    },
+    {
+      "index": 57,
+      "coords": "254,897,287,936",
+      "row": 15,
+      "col": "D",
+      "booked": false
+    },
+    {
+      "index": 58,
+      "coords": "134,943,167,982",
+      "row": 16,
+      "col": "A",
+      "booked": true
+    },
+    {
+      "index": 59,
+      "coords": "165,943,198,982",
+      "row": 16,
+      "col": "B",
+      "booked": false
+    },
+    {
+      "index": 60,
+      "coords": "223,943,256,982",
+      "row": 16,
+      "col": "C",
+      "booked": false
+    },
+    {
+      "index": 61,
+      "coords": "254,943,287,982",
+      "row": 16,
+      "col": "D",
+      "booked": true
+    },
+    {
+      "index": 62,
+      "coords": "134,988,167,1027",
+      "row": 17,
+      "col": "A",
+      "booked": false
+    },
+    {
+      "index": 63,
+      "coords": "165,988,198,1027",
+      "row": 17,
+      "col": "B",
+      "booked": false
+    },
+    {
+      "index": 64,
+      "coords": "223,988,256,1027",
+      "row": 17,
+      "col": "C",
+      "booked": false
+    },
+    {
+      "index": 65,
+      "coords": "254,988,287,1028",
+      "row": 17,
+      "col": "D",
+      "booked": false
+    },
+    {
+      "index": 66,
+      "coords": "134,1034,167,1073",
+      "row": 18,
+      "col": "A",
+      "booked": true
+    },
+    {
+      "index": 67,
+      "coords": "165,1034,198,1073",
+      "row": 18,
+      "col": "B",
+      "booked": false
+    },
+    {
+      "index": 68,
+      "coords": "223,1034,256,1073",
+      "row": 18,
+      "col": "C",
+      "booked": true
+    },
+    {
+      "index": 69,
+      "coords": "254,1034,287,1073",
+      "row": 18,
+      "col": "D",
+      "booked": false
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "userFirstName": "Marcin",
+  "userLastName": "Rochowski",
+  "userFlights": [
+    {
+      "nr": "vdfo349wf3",
+      "departureTime": "2012-07-31",
+      "returnTime": "2012-08-02",
+      "passengers": 2,
+      "originCity": "Warszawa",
+      "originAlias": "Modlin",
+      "originCode": "WMI",
+      "destinationCity": "Stavanger",
+      "destinationAlias": "",
+      "destinationCode": "SVG",
+      "isFlightDomestic": false
+    },
+    {
+      "nr": "32rf2m3934",
+      "departureTime": "2013-06-05",
+      "returnTime": "2013-06-08",
+      "passengers": 4,
+      "originCity": "Warszawa",
+      "originAlias": "Okęcie",
+      "originCode": "WAW",
+      "destinationCity": "Sztokholm",
+      "destinationAlias": "Skavsta",
+      "destinationCode": "NYO",
+      "isFlightDomestic": false
+    },
+    {
+      "nr": "rbg09w4t46",
+      "departureTime": "2014-04-04",
+      "returnTime": "2014-04-06",
+      "passengers": 2,
+      "originCity": "Poznań",
+      "originAlias": "Ławica",
+      "originCode": "POZ",
+      "destinationCity": "Oslo",
+      "destinationAlias": "Moss-Rygge",
+      "destinationCode": "RYG",
+      "isFlightDomestic": false
+    }
+  ]
+}
