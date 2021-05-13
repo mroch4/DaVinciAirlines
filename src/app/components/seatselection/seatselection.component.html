@@ -3,7 +3,7 @@
     <div class="right">
       <div *ngIf="isFlightDomestic===true; then embraer else boeing"></div>
       <ng-template #embraer>
-        <img src="../../../assets/planes/embraer_erj_170.svg" alt="embraer_seatmap" usemap="#embraerseatmap">
+        <img src="/assets/planes/embraer_erj_170.svg" alt="embraer_seatmap" usemap="#embraerseatmap">
         <map id="embraerseatmap" name="embraerseatmap">
           <div *ngFor="let item of eSeats">
             <div *ngIf="item.booked; then booked else available"></div>
@@ -19,7 +19,7 @@
         </map>
       </ng-template>
       <ng-template #boeing>
-        <img src="../../../assets/planes/boeing_737_800.svg" alt="boeing_seatmap" usemap="#boeingseatmap">
+        <img src="/assets/planes/boeing_737_800.svg" alt="boeing_seatmap" usemap="#boeingseatmap">
         <map id="boeingseatmap" name="boeingseatmap">
           <div *ngFor="let item of bSeats">
             <div *ngIf="item.booked; then booked else available"></div>
