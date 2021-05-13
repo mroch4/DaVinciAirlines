@@ -91,7 +91,7 @@ export class CurrexchangeComponent implements OnInit {
         this.exchangeArray[0].rates[22],
       ];
       for (let i = 0; i < this.myCurrencies.length; i++) {
-        this.myCurrencies[i].url = '/assets/currencies/' + i + '.png'
+        this.myCurrencies[i].url = 'assets/currencies/' + i + '.png'
       }
     });
     this.data.currentMessage.subscribe(message => this.message = message)
