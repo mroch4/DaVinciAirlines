@@ -8,7 +8,7 @@ export class ExchangerateService {
 
   constructor(private http: HttpClient) { }
 
-  url = 'http://api.nbp.pl/api/exchangerates/tables/a/';
+  url = 'https://api.nbp.pl/api/exchangerates/tables/a/';
 
   getActualExchangeRate() {
     return this.http.get(this.url);
