@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 
 import { FlightformService } from '../../services/flightform.service'
 
-import * as boeingSeats from '../../../assets/data/boeingseats.json';
-import * as embraerSeats from '../../../assets/data/embraerseats.json';
+import * as boeingSeats from '../../../dva/assets/data/boeingseats.json';
+import * as embraerSeats from '../../../dva/assets/data/embraerseats.json';
 
 @Component({
   selector: 'app-seatselection',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as flights from '../../../assets/data/myflights.json';
+import * as flights from '../../../dva/assets/data/myflights.json';
 
 @Component({
   selector: 'app-flights',

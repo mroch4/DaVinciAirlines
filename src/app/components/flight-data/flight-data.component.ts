@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 
 import { FlightformService } from '../../services/flightform.service'
 
-import * as airports from '../../../assets/data/airports.json';
-import * as connections from '../../../assets/data/connections.json';
+import * as airports from '../../../dva/assets/data/airports.json';
+import * as connections from '../../../dva/assets/data/connections.json';
 
 interface airport {
   airportId: number,
@@ -92,7 +92,7 @@ export class FlightDataComponent implements OnInit {
   airportsGroups: airportsGroup[] = [
     {
       country: 'Polska',
-      url: './assets/flags/pl.png',
+      url: '/dva/assets/flags/pl.png',
       airports: [
         this.airportsArray[0],
         this.airportsArray[1],
@@ -105,14 +105,14 @@ export class FlightDataComponent implements OnInit {
     },
     {
       country: 'Finlandia',
-      url: './assets/flags/fin.png',
+      url: '/dva/assets/flags/fin.png',
       airports: [
         this.airportsArray[7],
       ]
     },
     {
       country: 'Francja',
-      url: './assets/flags/f.png',
+      url: '/dva/assets/flags/f.png',
       airports: [
         this.airportsArray[8],
         this.airportsArray[9],
@@ -120,21 +120,21 @@ export class FlightDataComponent implements OnInit {
     },
     {
       country: 'Izrael',
-      url: './assets/flags/il.png',
+      url: '/dva/assets/flags/il.png',
       airports: [
         this.airportsArray[10],
       ]
     },
     {
       country: 'Norwegia',
-      url: './assets/flags/n.png',
+      url: '/dva/assets/flags/n.png',
       airports: [
         this.airportsArray[11],
       ]
     },
     {
       country: 'Szwecja',
-      url: './assets/flags/s.png',
+      url: '/dva/assets/flags/s.png',
       airports: [
         this.airportsArray[12],
         this.airportsArray[13],
@@ -142,14 +142,14 @@ export class FlightDataComponent implements OnInit {
     },
     {
       country: 'Węgry',
-      url: './assets/flags/h.png',
+      url: '/dva/assets/flags/h.png',
       airports: [
         this.airportsArray[14],
       ]
     },
     {
       country: 'Włochy',
-      url: './assets/flags/i.png',
+      url: '/dva/assets/flags/i.png',
       airports: [
         this.airportsArray[15],
       ]
