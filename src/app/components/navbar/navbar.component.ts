@@ -17,15 +17,14 @@ export class NavbarComponent implements OnInit {
     private toast: MatSnackBar
   ) { }
 
-  loggedIn = this.authService.isloggedIn
-  userName: any = localStorage.getItem('userName');
+  loggedIn = this.authService.isloggedIn;
+  userName: any;
 
   logout() {
     this.authService.logout()
       .then(() => this.router.navigate(['']))
       .then(() => this.toast.open('Pomyślnie wylogowano!', '', { panelClass: 'toast-success' }));
     localStorage.removeItem('userName');
-    this.userName = null;
   }
 
   ngOnInit() {
