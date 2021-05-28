@@ -47,7 +47,7 @@ export class LoginComponent {
       password: this.logInForm.value.password
     }
 
-    localStorage.setItem('userName', this.credentials.email);
+    window.localStorage.setItem('userName', this.credentials.email);
 
     this.authService.login(this.credentials)
       .then(() => this.router.navigate(['/myflights']))
