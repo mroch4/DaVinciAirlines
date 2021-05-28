@@ -6,7 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class ExchangerateService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   url = 'https://api.nbp.pl/api/exchangerates/tables/a/';
 

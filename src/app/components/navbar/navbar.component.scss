@@ -5,6 +5,32 @@
   }
 }
 
-a {
+.container-fluid{
+  color: rgb(115, 115, 115);
+}
+
+span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+strong {
+  color: black;
+  margin-left: 4px;
+}
+
+.greeting {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.action {
+  cursor: pointer;
   text-transform: uppercase;
+}
+
+mat-icon{
+  display: inline-flex;
+  margin: 0 5px;
 }

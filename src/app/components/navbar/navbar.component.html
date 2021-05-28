@@ -1,18 +1,28 @@
 <div class="container">
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container-fluid">
-      <a class="navbar-brand"><img src="/dva/assets/dva_logo.png" routerLink="/homepage"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ms-auto">
-          <a class="nav-link" [routerLink]="['']">Strona Główna</a>
-          <a class="nav-link" [routerLink]="['myflights']">Moje loty</a>
-          <a class="nav-link" [routerLink]="['login']">Zaloguj</a>
-          <a class="nav-link" href="#">Zarejestruj</a>
-        </div>
+      <a class="navbar-brand">
+        <img src="/dva/assets/dva_logo.png" routerLink="/homepage">
+      </a>
+      <div>
+        <div *ngIf="this.authService.isloggedIn; then loggedBlock else notLoggedBlock"></div>
+        <ng-template #loggedBlock>
+          <span class="greeting" [routerLink]="['myflights']">
+            Witaj,
+            <strong>{{userName}}</strong>
+            <mat-icon>person</mat-icon>
+          </span>
+          <span class="action" (click)="logout()">
+            Wyloguj
+            <mat-icon>power_settings_new</mat-icon>
+          </span>
+        </ng-template>
+        <ng-template #notLoggedBlock>
+          <span class="action" [routerLink]="['login']">
+            Zaloguj/Zarejestruj
+            <mat-icon>exit_to_app</mat-icon>
+          </span>
+        </ng-template>
       </div>
     </div>
   </nav>

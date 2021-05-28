@@ -4,7 +4,6 @@
   background-image: url('/dva/assets/backgrounds/flightform.jpg');
   background-position: center;
   background-size: cover;
-  // background-color: #eee;
 }
 
 .d-flex {
@@ -82,7 +81,6 @@ $radius: 5px;
   &:hover {
     border: 2px solid rgb(33, 33, 33);
   }
-
 }
 
 .leftButton {
@@ -132,8 +130,16 @@ mat-icon {
   }
 }
 
-@media (max-width: 767px) {
+.btn {
+  outline: none;
+  box-shadow: none;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
 
+@media (max-width: 767px) {
   .d-flex {
     display: inline-flex;
     flex-wrap: wrap;

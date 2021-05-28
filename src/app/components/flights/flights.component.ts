@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as flights from '../../../dva/assets/data/myflights.json';
+import { UserflightsService } from 'src/app/services/userflights.service';
 
 @Component({
   selector: 'app-flights',
@@ -9,11 +9,18 @@ import * as flights from '../../../dva/assets/data/myflights.json';
 })
 export class FlightsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private userFlightsService: UserflightsService
+  ) { }
 
-  flights = flights.userFlights;
+  remove(event: any){
+    this.userFlightsService.removeFlight(event.target.id);
+  }
 
-  ngOnInit(): void {
+  flights: any = [];
+
+  ngOnInit() {
+    this.userFlightsService.getFlights().subscribe(flights => this.flights = flights);
   }
 
 }

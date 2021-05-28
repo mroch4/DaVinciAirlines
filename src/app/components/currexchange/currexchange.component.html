@@ -2,7 +2,6 @@
   <h2>Przelicznik walut</h2>
   <div class="shadow">
     <form [formGroup]="currencyCalc">
-
       <div>
         <mat-form-field appearance="outline">
           <mat-label>Kwota</mat-label>
@@ -11,9 +10,7 @@
           </mat-error>
         </mat-form-field>
       </div>
-
       <div class="verse">
-
         <mat-form-field appearance="outline">
           <mat-label>Przelicz z:</mat-label>
           <mat-select formControlName="baseCurrency">
@@ -23,9 +20,7 @@
           <mat-error *ngIf="currencyCalc.get('baseCurrency')?.hasError('required')">Wybierz walutę, aby kontynuować
           </mat-error>
         </mat-form-field>
-
-        <mat-icon class="arrows" (click)="swapCurrencies()">compare_arrows</mat-icon>
-
+        <mat-icon class="arrows">compare_arrows</mat-icon>
         <mat-form-field appearance="outline">
           <mat-label>Przelicz na:</mat-label>
           <mat-select formControlName="targetCurrency">
@@ -35,15 +30,11 @@
           <mat-error *ngIf="currencyCalc.get('targetCurrency')?.hasError('required')">Wybierz walutę, aby kontynuować
           </mat-error>
         </mat-form-field>
-
       </div>
-
       <div>
         <button type="button" class="btn btn-success" [disabled]="!currencyCalc.valid"
           (click)="openCurrexDialog()">Przelicz</button>
       </div>
-
     </form>
-
   </div>
 </div>

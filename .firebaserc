@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "davinciairlines": {
+      "hosting": {
+        "cdv-planes": [
+          "davinciairlines"
+        ]
+      }
+    }
+  }
+}

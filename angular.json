@@ -8,6 +8,9 @@
   "projects": {
     "cdv-planes": {
       "projectType": "application",
+      "i18n": {
+        "sourceLocale": "pl"
+      },
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
@@ -133,6 +136,10 @@
               "devServerTarget": "cdv-planes:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

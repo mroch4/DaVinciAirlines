@@ -1,0 +1,153 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="actualWeather weatherInfo shadow">
+      <h1>Aktualna pogoda</h1>
+      <form [formGroup]="weatherForm">
+        <mat-form-field appearance="outline">
+          <mat-label>Pokaż prognozę dla miasta:</mat-label>
+          <input matInput type="text" formControlName="city">
+        </mat-form-field>
+      </form>
+      <div class="verse">
+        <button type="button" class="btn btn-primary btn-sm" [disabled]="!weatherForm.valid"
+          (click)="getWeatherByCityName()">Pokaż prognozę</button>
+        <mat-icon (click)="getWeatherByAutoLocation()">gps_fixed</mat-icon>
+      </div>
+      <div class="verse">
+        <div>
+          <h2>{{cityName}}, {{country}}</h2>
+          <h5>(populacja: {{population | number}})</h5>
+        </div>
+      </div>
+      <div class="verse">
+        <div>
+          <h4>Wschód słońca:</h4>
+          <div class="sun rise">
+            <img src="/dva/assets/weather_icons/sun.png" alt="sunrise_icon">
+            <div *ngIf="sunriseHour>=10&&sunriseMinute>=10">
+              <h2>{{sunriseHour}}:{{sunriseMinute}}</h2>
+            </div>
+            <div *ngIf="sunriseHour>=10&&sunriseMinute<10">
+              <h2>{{sunriseHour}}:0{{sunriseMinute}}</h2>
+            </div>
+            <div *ngIf="sunriseHour<10&&sunriseMinute>=10">
+              <h2>0{{sunriseHour}}:{{sunriseMinute}}</h2>
+            </div>
+            <div *ngIf="sunriseHour<10&&sunriseMinute<10">
+              <h2>0{{sunriseHour}}:0{{sunriseMinute}}</h2>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4>Zachód słońca:</h4>
+          <div class="sun set">
+            <img class="moon" src="/dva/assets/weather_icons/moon.png" alt="sunset_icon">
+            <div *ngIf="sunsetHour>=10&&sunsetMinute>=10">
+              <h2>{{sunsetHour}}:{{sunsetMinute}}</h2>
+            </div>
+            <div *ngIf="sunsetHour>=10&&sunsetMinute<10">
+              <h2>{{sunsetHour}}:0{{sunsetMinute}}</h2>
+            </div>
+            <div *ngIf="sunsetHour<10&&sunsetMinute>=10">
+              <h2>0{{sunsetHour}}:{{sunsetMinute}}</h2>
+            </div>
+            <div *ngIf="sunsetHour<10&&sunsetMinute<10">
+              <h2>0{{sunsetHour}}:0{{sunsetMinute}}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="verse">
+        <div>
+          <h4>Temperatura:</h4>
+          <h2>{{actualTemp | number: '.0-0'}}&#8451;</h2>
+        </div>
+        <div>
+          <h4>Ciśnienie:</h4>
+          <h2>{{actualPressure}} hPa</h2>
+        </div>
+      </div>
+      <div class="verse">
+        <div>
+          <h4>Prędkość wiatru:</h4>
+          <h2>{{actualWindV | number: '.0-0'}} km/h</h2>
+        </div>
+        <div>
+          <h4>Kierunek wiatru:</h4>
+          <h2>
+            <span *ngIf="actualWindDir>=337.5||actualWindDir<22.5">N</span>
+            <span *ngIf="actualWindDir>=22.5&&actualWindDir<67.5">NE</span>
+            <span *ngIf="actualWindDir>=67.5&&actualWindDir<112.5">E</span>
+            <span *ngIf="actualWindDir>=112.5&&actualWindDir<157.5">SE</span>
+            <span *ngIf="actualWindDir>=157.5&&actualWindDir<202.5">S</span>
+            <span *ngIf="actualWindDir>=202.5&&actualWindDir<247.5">SW</span>
+            <span *ngIf="actualWindDir>=247.5&&actualWindDir<292.5">W</span>
+            <span *ngIf="actualWindDir>=292.5&&actualWindDir<337.5">NW</span>
+            ({{actualWindDir}}&#176;)
+          </h2>
+        </div>
+      </div>
+      <div class="verse last">
+        <div>
+          <h4>Zachmurzenie:</h4>
+          <h2>{{actualClouds}}%</h2>
+        </div>
+        <div>
+          <h4>Wilgotność:</h4>
+          <h2>{{actualHumidity}}%</h2>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <div class="weatherInfo infoHourByHour shadow">
+      <h1>Pogoda na kolejne 24h</h1>
+      <div *ngFor="let array of hourByHour">
+        <div *ngFor="let item of array">
+          <div class="tile">
+            <div class="hour">
+              <h2>{{item.hour}}</h2>
+            </div>
+            <div class="rest">
+              <div *ngIf="item.icon==='01d'"><img src="/dva/assets/weather_icons/cleard.png"></div>
+              <div *ngIf="item.icon==='01n'"><img src="/dva/assets/weather_icons/clearn.png"></div>
+              <div *ngIf="item.icon==='02d'"><img src="/dva/assets/weather_icons/cloudsd.png"></div>
+              <div *ngIf="item.icon==='03d'"><img src="/dva/assets/weather_icons/cloudsd.png"></div>
+              <div *ngIf="item.icon==='04d'"><img src="/dva/assets/weather_icons/cloudsd.png"></div>
+              <div *ngIf="item.icon==='02n'"><img src="/dva/assets/weather_icons/cloudsn.png"></div>
+              <div *ngIf="item.icon==='03n'"><img src="/dva/assets/weather_icons/cloudsn.png"></div>
+              <div *ngIf="item.icon==='04n'"><img src="/dva/assets/weather_icons/cloudsn.png"></div>
+              <div *ngIf="item.clouds==='Rain'"><img src="/dva/assets/weather_icons/rain.png"></div>
+              <div *ngIf="item.clouds==='Snow'"><img src="/dva/assets/weather_icons/snow.png"></div>
+              <div *ngIf="item.clouds==='Thunderstorm'"><img src="/dva/assets/weather_icons/thunderstorm.png"></div>
+              <h2>{{item.temp | number: '.0-0'}}&#8451;</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="weatherInfo infoDayByDay shadow">
+      <h1>Pogoda na 5 dni</h1>
+      <div *ngFor="let array of dayByDay">
+        <div *ngFor="let item of array">
+          <div class="daytile">
+            <h4>{{item.day | date:'EEEE, d MMMM'}}</h4>
+            <div class="dayrest">
+              <div *ngIf="item.icon==='01d'"><img src="/dva/assets/weather_icons/cleard.png"></div>
+              <div *ngIf="item.icon==='01n'"><img src="/dva/assets/weather_icons/clearn.png"></div>
+              <div *ngIf="item.icon==='02d'"><img src="/dva/assets/weather_icons/cloudsd.png"></div>
+              <div *ngIf="item.icon==='03d'"><img src="/dva/assets/weather_icons/cloudsd.png"></div>
+              <div *ngIf="item.icon==='04d'"><img src="/dva/assets/weather_icons/cloudsd.png"></div>
+              <div *ngIf="item.icon==='02n'"><img src="/dva/assets/weather_icons/cloudsn.png"></div>
+              <div *ngIf="item.icon==='03n'"><img src="/dva/assets/weather_icons/cloudsn.png"></div>
+              <div *ngIf="item.icon==='04n'"><img src="/dva/assets/weather_icons/cloudsn.png"></div>
+              <div *ngIf="item.clouds==='Rain'"><img src="/dva/assets/weather_icons/rain.png"></div>
+              <div *ngIf="item.clouds==='Snow'"><img src="/dva/assets/weather_icons/snow.png"></div>
+              <div *ngIf="item.clouds==='Thunderstorm'"><img src="/dva/assets/weather_icons/thunderstorm.png"></div>
+              <h2>{{item.temp | number: '.0-0'}}&#8451;</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

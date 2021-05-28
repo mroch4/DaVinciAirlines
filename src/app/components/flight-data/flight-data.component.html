@@ -1,25 +1,19 @@
 <div class="container-fluid">
   <div class="container">
     <div class="d-flex">
-
       <div>
         <h2 class="outline">Świat staje przed Tobą otworem!</h2>
         <h1 class="outline">Wykrzycz: "Hello, World!"</h1>
       </div>
-
       <div class="shadow">
         <form [formGroup]="flighForm">
-
           <mat-radio-group formControlName="journey">
             <mat-radio-button *ngFor="let item of journeys" [value]="item.key" [checked]="item.checked"
               (click)="changeJourneyType()">{{item.key}}
             </mat-radio-button>
           </mat-radio-group>
-
           <div class="verse">
-
             <div *ngIf="journeys[0].checked==true; then onewayBlock else returnBlock"></div>
-
             <ng-template #onewayBlock>
               <mat-form-field appearance="outline" class="date">
                 <mat-label>Wybierz datę wylotu</mat-label>
@@ -28,7 +22,6 @@
                 <mat-datepicker #picker></mat-datepicker>
               </mat-form-field>
             </ng-template>
-
             <ng-template #returnBlock>
               <mat-form-field appearance="outline" class="date">
                 <mat-label>Wybierz daty podróży</mat-label>
@@ -40,18 +33,14 @@
                 <mat-date-range-picker #picker></mat-date-range-picker>
               </mat-form-field>
             </ng-template>
-
             <div class="d-inline-flex passengers">
               <div class="label">Liczba pasażerów:</div>
               <button class="passengerButton leftButton" (click)="addPassenger()">+</button>
               <span>{{passengers}}</span>
               <button class="passengerButton rightButton" (click)="removePassenger()">-</button>
             </div>
-
           </div>
-
           <div class="verse">
-
             <mat-form-field appearance="outline" class="location">
               <mat-label>
                 <mat-icon>flight_takeoff</mat-icon>Wylot z:
@@ -67,9 +56,7 @@
               <mat-error *ngIf="flighForm.get('origin')?.hasError('required')">Wybierz miejsce odlotu
               </mat-error>
             </mat-form-field>
-
-            <mat-icon class="arrows" (click)="swapLocation()">compare_arrows</mat-icon>
-
+            <mat-icon class="arrows">compare_arrows</mat-icon>
             <mat-form-field appearance="outline" class="location">
               <mat-label>
                 <mat-icon>flight_land</mat-icon>Przylot do:
@@ -82,15 +69,11 @@
               <mat-error *ngIf="flighForm.get('origin')?.hasError('required')">Wybierz miejsce przylotu
               </mat-error>
             </mat-form-field>
-
           </div>
-
           <button type="button" class="btn btn-success float-end" [disabled]="!flighForm.valid" (click)="submit()">Dalej
             &#8594;</button>
-
         </form>
       </div>
-
     </div>
   </div>
 </div>

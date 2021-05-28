@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 
-import { ExchangerateService } from 'src/app/services/exchangerate.service';
-import { CurrexdialogService } from 'src/app/services/currexdialog.service'
-
 import { CurrexDialogComponent } from './currex-dialog/currex-dialog.component';
+
+import { CurrexdialogService } from 'src/app/services/currexdialog.service';
+import { ExchangerateService } from 'src/app/services/exchangerate.service';
 
 @Component({
   selector: 'app-currexchange',
@@ -16,9 +16,9 @@ import { CurrexDialogComponent } from './currex-dialog/currex-dialog.component';
 export class CurrexchangeComponent implements OnInit {
 
   constructor(
+    private data: CurrexdialogService,
     private exchangeRate: ExchangerateService,
-    private dialog: MatDialog,
-    private data: CurrexdialogService
+    private dialog: MatDialog
   ) { }
 
   // form controls
@@ -28,14 +28,6 @@ export class CurrexchangeComponent implements OnInit {
     baseCurrency: new FormControl('', [Validators.required]),
     targetCurrency: new FormControl('', [Validators.required]),
   })
-
-  // swap
-
-  swapCurrencies() {
-    let x = this.currencyCalc.value.baseCurrency;
-    let y = this.currencyCalc.value.targetCurrency;
-    // console.log(y, x)
-  }
 
   // calculating values
 

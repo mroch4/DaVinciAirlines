@@ -7,11 +7,11 @@ import { BehaviorSubject } from 'rxjs';
 export class CurrexdialogService {
 
   private messageSource = new BehaviorSubject<any>("[1,2,3]");
-  currentMessage = this.messageSource.asObservable()
+  currentMessage = this.messageSource.asObservable();
 
   constructor() { }
 
   changeMessage(message: any) {
-    this.messageSource.next(message)
+    this.messageSource.next(message);
   }
 }

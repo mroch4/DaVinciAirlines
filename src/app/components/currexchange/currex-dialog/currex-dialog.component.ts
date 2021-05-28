@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CurrexdialogService } from '../../../services/currexdialog.service'
+
+import { CurrexdialogService } from '../../../services/currexdialog.service';
 
 @Component({
   selector: 'app-currex-dialog',

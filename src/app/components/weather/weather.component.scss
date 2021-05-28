@@ -1,0 +1,185 @@
+.container-fluid {
+  background-image: url('/assets/backgrounds/weather.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.weatherInfo {
+  margin: 20px 10px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+
+  h1 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  h4 {
+    margin: 0;
+    text-align: center;
+  }
+
+  h5 {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.actualWeather {
+  width: 320px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.verse {
+  margin-bottom: 18.813px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.last {
+  margin-bottom: 0;
+}
+
+.btn {
+  width: 88%;
+  outline: none;
+  box-shadow: none;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+mat-icon {
+  cursor: pointer;
+}
+
+.sun {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rise {
+  img {
+    height: 18px;
+    margin-right: 8px;
+  }
+}
+
+.set {
+  img {
+    height: 14px;
+    margin-right: 8px;
+  }
+}
+
+.infoHourByHour {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    font-size: 16px;
+    margin-bottom: 28.813px;
+  }
+
+  img {
+    height: 20px;
+    margin-top: 6px;
+  }
+}
+
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18.813px;
+
+  .rest {
+    width: 110px;
+    display: inline-flex;
+    justify-content: space-between;
+  }
+}
+
+.infoDayByDay {
+  width: 240px;
+
+  h1 {
+    margin-bottom: 43.813px;
+  }
+
+  .daytile {
+    text-align: center;
+    margin-bottom: 28.813px;
+  }
+
+  .dayrest {
+    width: 80px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  img {
+    height: 20px;
+  }
+}
+
+@media (max-width: 991px) {
+  .infoHourByHour {
+    img {
+      margin: 6px 10px 0;
+    }
+  }
+
+  .tile {
+    .rest {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .infoHourByHour {
+    width: 320px;
+    margin: 0 10px;
+  }
+
+  .infoDayByDay {
+    width: 320px;
+  }
+
+  .tile {
+    .rest {
+      width: 160px;
+    }
+  }
+}

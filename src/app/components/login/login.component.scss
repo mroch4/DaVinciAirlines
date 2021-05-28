@@ -17,10 +17,20 @@
   justify-content: center;
 }
 
+.btn {
+  margin-bottom: 20px;
+  outline: none;
+  box-shadow: none;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
 h5 {
-  margin-top: 32px;
-  margin-bottom: 12px;
+  display: inline-flex;
   cursor: pointer;
+  margin: 0;
 }
 
 mat-form-field {
@@ -28,9 +38,7 @@ mat-form-field {
 }
 
 @media (max-width: 767px) {
-
   .container-fluid {
     text-align: center;
   }
-
 }

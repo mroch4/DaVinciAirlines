@@ -4,26 +4,42 @@
       <div class="card shadow">
         <div class="section">
           <h1>Numer rezerwacji:</h1>
-          <h2>{{item.nr | uppercase}}</h2>
+          <h2>DVA {{item.reservationNumber| number: '.0':'pl'}}</h2>
         </div>
         <div class="section">
-          <h1>Odlot:</h1>
+          <h1>Odlot z:</h1>
           <h2>{{item.originCity}} {{item.originAlias}} | {{item.originCode}}</h2>
-          <h2>{{item.departureTime}}</h2>
         </div>
         <div class="section">
-          <h1>Przylot:</h1>
+          <h1>Przylot do:</h1>
           <h2>{{item.destinationCity}} {{item.destinationAlias}} | {{item.destinationCode}}</h2>
-          <h2>{{item.returnTime}}</h2>
         </div>
+        <div class="section">
+          <h1>Odlot w dniu:</h1>
+          <h2>{{item.departureTime| date:'d MMMM y'}}</h2>
+        </div>
+        <ng-template [ngIf]="item.returnTime">
+          <div class="section">
+            <h1>Powrót w dniu:</h1>
+            <h2>{{item.returnTime| date:'d MMMM y'}}</h2>
+          </div>
+        </ng-template>
         <div class="section">
           <h1>Ilość pasażerów:</h1>
           <h2>{{item.passengers}}</h2>
+        </div>
+        <div class="section">
+          <h1>Wybrane miejsca:</h1>
+          <h2> {{item.bookedSeats}}</h2>
+        </div>
+        <div class="icon">
+          <mat-icon id="{{item.key}}" (click)="remove($event)">delete</mat-icon>Anuluj rezerwację
         </div>
         <mat-divider></mat-divider>
         <div>
           <img class="logo" src="/dva/assets/dva_logo.png" alt="cdv_logo">
           <h4>DaVinci Airlines</h4>
+          <h4>&copy; eTicket</h4>
         </div>
       </div>
     </div>

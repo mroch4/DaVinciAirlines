@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { FlightformService } from '../../services/flightform.service'
+import { AuthService } from '../../services/auth.service';
+import { FlightformService } from '../../services/flightform.service';
+import { UserflightsService } from '../../services/userflights.service';
 
-import * as boeingSeats from '../../../dva/assets/data/boeingseats.json';
-import * as embraerSeats from '../../../dva/assets/data/embraerseats.json';
+import * as embraerSeats from '../../../assets/data/embraerseats.json';
+import * as boeingSeats from '../../../assets/data/boeingseats.json';
 
 @Component({
   selector: 'app-seatselection',
@@ -14,8 +16,10 @@ import * as embraerSeats from '../../../dva/assets/data/embraerseats.json';
 export class SeatselectionComponent implements OnInit {
 
   constructor(
+    private router: Router,
+    public authService: AuthService,
     private data: FlightformService,
-    private router: Router
+    private userFlightsService: UserflightsService
   ) { }
 
   // seat selection
@@ -41,13 +45,11 @@ export class SeatselectionComponent implements OnInit {
       alert('Wybrałeś już miejsca dla wszystkich pasażerów')
       return
     }
-    // console.log(this.chosenSeats, this.chosenAmount)
   }
 
   removeSeat(i: number) {
     this.chosenSeats.splice(i);
     this.chosenAmount = this.chosenSeats.length;
-    // console.log(this.chosenSeats, this.chosenAmount)
   }
 
   // navigation
@@ -57,35 +59,61 @@ export class SeatselectionComponent implements OnInit {
   }
 
   submit() {
-    this.router.navigate(['login'])
+    this.message.bookedSeats = this.chosenSeats;
+    this.message.departureTime = this.departureTime.toJSON();
+    if (this.message.returnTime) {
+      this.message.returnTime = this.returnTime.toJSON();
+    }
+
+    if (this.authService.isloggedIn) {
+      this.router.navigate(['myflights']);
+      this.userFlightsService.addFlight(this.message)
+    } else {
+      this.router.navigate(['login']);
+    }
   }
 
   // receive message from flight component
 
   message: any = [];
 
-  departureTime: Date = new Date;
-  returnTime: Date = new Date;
+  reservationNumber: number = 0;
+
+  departureTime: any;
+  returnTime: any;
+
   passengers: number = 0;
+  bookedSeats: string = '';
+
   originCity: string = '';
   originAlias: string = '';
   originCode: string = '';
+
   destinationCity: string = '';
   destinationAlias: string = '';
   destinationCode: string = '';
+
   isFlightDomestic: boolean = false;
 
   ngOnInit() {
-    this.data.currentMessage.subscribe(message => this.message = message);
-    this.departureTime = this.message[0];
-    this.returnTime = this.message[1];
-    this.passengers = this.message[2];
-    this.originCity = this.message[3];
-    this.originAlias = this.message[4]
-    this.originCode = this.message[5];
-    this.destinationCity = this.message[6];
-    this.destinationAlias = this.message[7];
-    this.destinationCode = this.message[8];
-    this.isFlightDomestic = this.message[9];
+    this.data.currentMessage.subscribe(message => this.message = message[0]);
+
+    this.reservationNumber = this.message.reservationNumber;
+
+    this.departureTime = this.message.departureTime;
+    this.returnTime = this.message.returnTime;
+
+    this.passengers = this.message.passengers;
+    this.bookedSeats = this.message.bookedSeats;
+
+    this.originCity = this.message.originCity;
+    this.originAlias = this.message.originAlias;
+    this.originCode = this.message.originCode;
+
+    this.destinationCity = this.message.destinationCity;
+    this.destinationAlias = this.message.destinationAlias;
+    this.destinationCode = this.message.destinationCode;
+
+    this.isFlightDomestic = this.message.isFlightDomestic;
   }
 }

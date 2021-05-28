@@ -49,6 +49,15 @@
       </ng-template>
       <h2>Liczba pasażerów:</h2>
       <h3>{{passengers}}</h3>
+      <h2>Dodatkowe informacje:</h2>
+      <ng-template [ngIf]="isFlightDomestic===true">
+        <h4>- to połączenie obsługiwane jest samolotami Embraer 170:</h4>
+        <img src="/dva/assets/planes/e170.jpeg" alt="ebraer_170">
+      </ng-template>
+      <ng-template [ngIf]="isFlightDomestic===false">
+        <h4>- to połączenie obsługiwane jest samolotami Boeing 737:</h4>
+        <img src="/dva/assets/planes/b737.jpeg" alt="boeing_737">
+      </ng-template>
       <h2>Zarezerwowane miejsca:</h2>
       <h4>(wybrano {{chosenAmount}}/{{passengers}} miejsc)</h4>
       <div *ngFor="let item of chosenSeats, index as index">

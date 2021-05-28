@@ -3,8 +3,8 @@
   background-image: url('/dva/assets/backgrounds/currency.jpg');
   background-position: center;
   background-size: cover;
-  // background-color: #ddd;
   text-align: center;
+  margin-bottom: 12px;
 }
 
 h2 {
@@ -58,6 +58,12 @@ mat-icon {
 
 .btn {
   width: 200px;
+  outline: none;
+  box-shadow: none;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
 }
 
 @media (max-width: 540px) {

@@ -43,3 +43,15 @@ h2 {
 h4 {
   margin-bottom: 0;
 }
+
+.icon {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+mat-icon {
+  cursor: pointer;
+}

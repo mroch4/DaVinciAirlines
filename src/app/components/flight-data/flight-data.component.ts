@@ -2,24 +2,24 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { FlightformService } from '../../services/flightform.service'
+import { FlightformService } from '../../services/flightform.service';
 
-import * as airports from '../../../dva/assets/data/airports.json';
-import * as connections from '../../../dva/assets/data/connections.json';
+import * as airports from '../../../assets/data/airports.json';
+import * as connections from '../../../assets/data/connections.json';
 
 interface airport {
   airportId: number,
   country: string,
   city: string,
   alias: string,
-  iatacode: string,
+  iatacode: string
 }
 
 interface airportsGroup {
   disabled?: boolean,
   country: string,
   url: string,
-  airports: airport[],
+  airports: airport[]
 }
 
 @Component({
@@ -43,7 +43,7 @@ export class FlightDataComponent implements OnInit {
     end: new FormControl(''),
     origin: new FormControl('', [Validators.required]),
     destination: new FormControl('', [Validators.required]),
-  })
+  });
 
   minDate: Date = new Date;
 
@@ -55,7 +55,7 @@ export class FlightDataComponent implements OnInit {
       key: 'Podróż w obie strony',
       checked: false,
     }
-  ]
+  ];
 
   changeJourneyType() {
     for (let i = 0; i < this.journeys.length; i++) {
@@ -65,7 +65,7 @@ export class FlightDataComponent implements OnInit {
 
   // passenger a'la input
 
-  passengers: number = 1
+  passengers: number = 1;
 
   addPassenger() {
     if (this.passengers < 9) {
@@ -163,16 +163,11 @@ export class FlightDataComponent implements OnInit {
     }
   }
 
-  swapLocation() {
-    let x = this.airportsArray[this.flighForm.value.origin];
-    let y = this.airportsArray[this.flighForm.value.destination];
-    // console.log(y, x)
-  }
-
   // collecting flight data
 
-  flightData: any = [];
+  flightData: any;
   isFlightDomestic: boolean = false;
+  reservationNumber: number = Math.floor(123456*Math.random())+1000000;
 
   submit() {
     if (this.airportsArray[this.flighForm.value.origin].country === this.airportsArray[this.flighForm.value.destination].country) {
@@ -182,16 +177,20 @@ export class FlightDataComponent implements OnInit {
     }
 
     this.flightData = [
-      this.flighForm.value.start,
-      this.flighForm.value.end,
-      this.passengers,
-      this.airportsArray[this.flighForm.value.origin].city,
-      this.airportsArray[this.flighForm.value.origin].alias,
-      this.airportsArray[this.flighForm.value.origin].iatacode,
-      this.airportsArray[this.flighForm.value.destination].city,
-      this.airportsArray[this.flighForm.value.destination].alias,
-      this.airportsArray[this.flighForm.value.destination].iatacode,
-      this.isFlightDomestic
+      {
+        reservationNumber: this.reservationNumber,
+        departureTime: this.flighForm.value.start,
+        returnTime: this.flighForm.value.end,
+        passengers: this.passengers,
+        bookedSeats: undefined,
+        originCity: this.airportsArray[this.flighForm.value.origin].city,
+        originAlias: this.airportsArray[this.flighForm.value.origin].alias,
+        originCode: this.airportsArray[this.flighForm.value.origin].iatacode,
+        destinationCity: this.airportsArray[this.flighForm.value.destination].city,
+        destinationAlias: this.airportsArray[this.flighForm.value.destination].alias,
+        destinationCode: this.airportsArray[this.flighForm.value.destination].iatacode,
+        isFlightDomestic: this.isFlightDomestic
+      }
     ];
 
     this.data.changeMessage(this.flightData);
