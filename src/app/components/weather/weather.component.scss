@@ -74,6 +74,11 @@ mat-form-field {
 
 mat-icon {
   cursor: pointer;
+  opacity: 0.6;
+
+  &:hover {
+    opacity: 1.0;
+  }
 }
 
 .sun {
