@@ -18,13 +18,14 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   loggedIn = this.authService.isloggedIn
-  userName: any;
+  userName: any = localStorage.getItem('userName');
 
   logout() {
     this.authService.logout()
       .then(() => this.router.navigate(['']))
       .then(() => this.toast.open('Pomyślnie wylogowano!', '', { panelClass: 'toast-success' }));
-    localStorage.removeItem('userName')
+    localStorage.removeItem('userName');
+    this.userName = null;
   }
 
   ngOnInit() {
